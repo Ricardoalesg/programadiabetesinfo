@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Programa Nutrición &amp; Diabetes | Consol Simón</title>
+<meta name="description" content="Programa Nutrición & Diabetes de Consol Simón, farmacéutica y nutricionista que vive con diabetes tipo 1. Para adultos con DT1, y sesiones 1:1 para diabetes tipo 2 y familias de peques con DT1.">
+<meta name="theme-color" content="#4B6BFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#4B6BFF;--azul-osc:#3451E0;--azul-claro:#DDE5F6;--fondo:#F5F7FC;--negro:#111;--gris:#5B6275;--linea:#E4E9F5;--mostaza:#F5B342;--rosa:#F36AA0;--r:22px;--sombra:0 8px 28px rgba(30,50,140,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--negro);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:90px}
+h1,h2,h3,.pop{font-family:Poppins,system-ui,sans-serif;letter-spacing:-.4px}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--azul);color:#fff;font-family:Poppins;font-weight:700;font-size:16px;border-radius:999px;padding:15px 28px;text-decoration:none;box-shadow:0 8px 22px rgba(75,107,255,.32);transition:.2s;text-align:center}
+.btn:hover{background:var(--azul-osc);transform:translateY(-2px)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.blanco{background:#fff;color:var(--azul);box-shadow:0 8px 22px rgba(0,0,0,.15)}
+.btn.blanco:hover{background:var(--azul-claro)}
+.btn.sm{padding:10px 18px;font-size:14px;box-shadow:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--azul);background:var(--azul-claro);padding:6px 14px;border-radius:999px}
+section{padding:72px 0}
+.titulo{font-size:clamp(28px,4.6vw,42px);font-weight:800;line-height:1.12;margin-top:14px}
+.titulo span{color:var(--azul)}
+.lead{font-size:17px;color:var(--gris);margin-top:14px;max-width:640px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+
+/* header */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.top .wrap{height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo svg{width:28px;height:28px;color:var(--azul)}
+.logo b{font-family:Poppins;font-weight:800;font-size:17px;display:block;line-height:1.1}
+.logo small{font-size:11.5px;color:var(--gris);font-weight:500}
+
+/* hero */
+.hero{background:var(--azul);color:#fff;position:relative;overflow:hidden;padding:64px 0 80px}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:1}
+.hero .eyebrow{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.hero h1{font-size:clamp(36px,6.4vw,62px);font-weight:800;line-height:1.04;margin-top:18px;letter-spacing:-1px}
+.hero h1 span{color:var(--mostaza)}
+.hero p{font-size:clamp(16px,2.2vw,19px);opacity:.93;margin-top:18px;max-width:560px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:28px}
+.hero .ctas small{opacity:.8;font-size:13.5px}
+.hero .patron{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.13) 1.6px,transparent 1.6px);background-size:22px 22px;z-index:0}
+.hcard{background:#fff;color:var(--negro);border-radius:26px;padding:24px;box-shadow:0 24px 60px rgba(10,20,80,.3)}
+.hcard .who{display:flex;gap:14px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--linea)}
+.hcard .av{width:58px;height:58px;border-radius:50%;background:var(--azul);display:grid;place-items:center;flex:none}
+.hcard .av svg{width:30px;height:30px;color:#fff}
+.hcard .who b{font-family:Poppins;font-size:18px;display:block;line-height:1.2}
+.hcard .who span{font-size:13.5px;color:var(--gris)}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.num{background:var(--fondo);border-radius:16px;padding:16px}
+.num b{font-family:Poppins;font-weight:800;font-size:30px;color:var(--azul);display:block;line-height:1}
+.num span{font-size:13px;color:var(--gris);display:block;margin-top:6px}
+.hcard .quote{margin-top:16px;font-family:Poppins;font-weight:700;font-size:16px;line-height:1.35}
+.hcard .quote:before{content:"";display:block;width:30px;height:3px;background:var(--rosa);border-radius:2px;margin-bottom:10px}
+
+/* selector */
+.sel{background:var(--fondo)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.tab{background:#fff;border:2px solid var(--linea);border-radius:20px;padding:18px;text-align:left;display:flex;gap:14px;align-items:center;transition:.2s}
+.tab:hover{border-color:var(--azul-claro)}
+.tab .ic{width:46px;height:46px;border-radius:14px;background:var(--azul-claro);display:grid;place-items:center;flex:none;transition:.2s}
+.tab .ic svg{width:24px;height:24px;stroke:var(--azul)}
+.tab b{font-family:Poppins;font-size:16px;display:block;line-height:1.25}
+.tab span{font-size:13px;color:var(--gris)}
+.tab.on{border-color:var(--azul);box-shadow:var(--sombra)}
+.tab.on .ic{background:var(--azul)}
+.tab.on .ic svg{stroke:#fff}
+.panel{scroll-margin-top:80px;display:none;background:#fff;border-radius:26px;box-shadow:var(--sombra);margin-top:18px;overflow:hidden}
+.panel.on{display:grid;grid-template-columns:1.2fr .8fr;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel .main{padding:32px}
+.panel .side{background:var(--azul);color:#fff;padding:32px;display:flex;flex-direction:column;gap:16px;justify-content:center}
+.panel .tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--azul)}
+.panel h3{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin-top:6px}
+.panel p{color:var(--gris);margin-top:12px}
+.panel h4{font-family:Poppins;font-size:15px;margin:22px 0 10px}
+.lista{list-style:none;display:grid;gap:10px}
+.lista li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.lista li:before{content:"";width:22px;height:22px;border-radius:50%;flex:none;margin-top:1px;background:var(--azul-claro) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234B6BFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/13px no-repeat}
+.side .badge{align-self:flex-start;background:var(--mostaza);color:var(--negro);font-family:Poppins;font-weight:700;font-size:13px;border-radius:999px;padding:6px 14px}
+.side b.big{font-family:Poppins;font-weight:800;font-size:24px;line-height:1.2}
+.side p{color:rgba(255,255,255,.9);margin:0;font-size:15px}
+.mailbox{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.14);border:1px dashed rgba(255,255,255,.45);border-radius:14px;padding:10px 12px 10px 16px;font-size:14px;font-weight:600;word-break:break-all}
+.copiar{background:#fff;color:var(--azul);font-family:Poppins;font-weight:700;font-size:12.5px;border-radius:999px;padding:6px 12px;flex:none}
+details p a{color:var(--azul);font-weight:600}
+
+/* qué es */
+.pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.pil{border:1.5px solid var(--linea);border-radius:var(--r);padding:24px;transition:.2s;background:#fff}
+.pil:hover{border-color:var(--azul);box-shadow:var(--sombra);transform:translateY(-3px)}
+.pil .ic{width:48px;height:48px;border-radius:14px;background:var(--azul-claro);display:grid;place-items:center}
+.pil .ic svg{width:24px;height:24px;stroke:var(--azul)}
+.pil h3{font-size:18px;font-weight:700;margin-top:16px;line-height:1.25}
+.pil p{font-size:14.5px;color:var(--gris);margin-top:8px}
+
+/* para quién */
+.quien{background:var(--fondo)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+.col{background:#fff;border-radius:var(--r);padding:28px;box-shadow:var(--sombra)}
+.col h3{font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+.col h3 i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:18px;flex:none}
+.col.si h3 i{background:var(--azul);color:#fff}
+.col.no h3 i{background:#FDE4EE;color:var(--rosa)}
+.col .lista{margin-top:18px}
+.col.no .lista li:before{background:#FDE4EE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F36AA0' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E") center/11px no-repeat}
+
+/* pasos */
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;counter-reset:p}
+.paso{position:relative;padding:24px;border-radius:var(--r);background:#fff;border:1.5px solid var(--linea);counter-increment:p}
+.paso:before{content:counter(p);font-family:Poppins;font-weight:800;font-size:15px;width:38px;height:38px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center}
+.paso h3{font-size:17px;font-weight:700;margin-top:14px}
+.paso p{font-size:14px;color:var(--gris);margin-top:6px}
+.paso.free{border-color:var(--azul);background:linear-gradient(180deg,#fff, #F3F6FF)}
+.paso .gratis{position:absolute;top:22px;right:18px;background:var(--mostaza);font-family:Poppins;font-weight:700;font-size:11px;border-radius:999px;padding:4px 10px}
+
+/* faq */
+.faq{max-width:780px;margin:34px auto 0;display:grid;gap:10px}
+details{border:1.5px solid var(--linea);border-radius:18px;background:#fff;transition:.2s}
+details[open]{border-color:var(--azul);box-shadow:var(--sombra)}
+summary{list-style:none;cursor:pointer;padding:18px 20px;font-family:Poppins;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:24px;color:var(--azul);font-weight:600;line-height:1;transition:.2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{padding:0 20px 18px;color:var(--gris);font-size:15px}
+
+/* cta final */
+.final{padding:24px 0 72px}
+.fbox{background:var(--negro);color:#fff;border-radius:30px;padding:56px 28px;text-align:center;position:relative;overflow:hidden}
+.fbox .deco{position:absolute;width:280px;height:280px;right:-60px;bottom:-80px;color:var(--azul);opacity:.25}
+.fbox h2{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;max-width:760px;margin:0 auto;position:relative}
+.fbox h2 span{color:var(--azul)}
+.fbox p{opacity:.82;margin:16px auto 28px;max-width:560px;position:relative}
+.fbox .btn{position:relative}
+.fbox small{display:block;opacity:.55;margin-top:14px;font-size:13px;position:relative}
+footer{text-align:center;color:var(--gris);font-size:13px;padding:0 16px 30px}
+footer b{font-family:Poppins;color:var(--negro)}
+.legal{font-size:12px;max-width:700px;margin:10px auto 0;opacity:.85}
+
+/* barra fija */
+.fab{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,#fff 55%,rgba(255,255,255,0));display:flex;justify-content:center;pointer-events:none;transition:.3s}
+.fab .btn{pointer-events:auto;width:100%;max-width:440px}
+.fab.oculto{opacity:0;transform:translateY(20px)}
+
+@media(max-width:900px){
+  .hero .grid{grid-template-columns:1fr}
+  .pasos{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  section{padding:56px 0}
+  .top .btn{display:none}
+  .tabs{grid-template-columns:1fr}
+  .panel.on{grid-template-columns:1fr}
+  .panel .main,.panel .side{padding:24px}
+  .pilares{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr}
+  .hero{padding:44px 0 56px}
+  .hero .ctas .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="apple" viewBox="0 0 64 64"><path d="M32 18c-3-6-1-12 6-14 1 7-2 12-6 14z" fill="currentColor"/><path d="M44 19c-5 0-8 3-12 3s-7-3-12-3C12 19 6 26 6 36c0 13 9 25 16 25 4 0 6-2 10-2s6 2 10 2c7 0 16-12 16-25 0-10-6-17-14-17z" fill="currentColor"/></symbol>
+    <symbol id="cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><svg><use href="#apple"/></svg><div><b>Nutridiabeticame</b><small>Consol Simón</small></div></a>
+    <a class="btn sm" data-cal href="#" target="_blank" rel="noopener">Agenda tu llamada</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="patron"></div>
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Programa Nutrición &amp; Diabetes</span>
+      <h1>Mejora tu diabetes tipo 1 <span>sin vivir a dieta</span></h1>
+      <p>Un acompañamiento personalizado para adultos con diabetes tipo 1 que quieren entender su glucosa, contar hidratos con seguridad y comer con tranquilidad, también fuera de casa y también postres.</p>
+      <div class="ctas">
+        <a class="btn blanco" data-cal href="#" target="_blank" rel="noopener"><svg><use href="#cal"/></svg>Reserva tu llamada gratuita</a>
+        <small>Valoración gratuita y sin compromiso</small>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="who">
+        <div class="av"><svg><use href="#apple"/></svg></div>
+        <div><b>Consol Simón</b><span>Farmacéutica y nutricionista especializada en diabetes</span></div>
+      </div>
+      <div class="nums">
+        <div class="num"><b>22</b><span>años viviendo con diabetes tipo 1</span></div>
+        <div class="num"><b>+300</b><span>personas acompañadas</span></div>
+      </div>
+      <p class="quote">Tener diabetes no significa vivir castigándote.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTOR -->
+<section class="sel" id="tu-caso">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Empieza por aquí</span>
+      <h2 class="titulo">¿Cuál es <span>tu caso?</span></h2>
+      <p class="lead">Cada situación necesita un enfoque distinto. Elige la tuya y te cuento cómo puedo ayudarte.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-t="dt1" role="tab">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+        <div><b>Tengo diabetes tipo 1</b><span>Adulto, mayor de 18 años</span></div>
+      </button>
+      <button class="tab" data-t="dt2" role="tab">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div>
+        <div><b>Tengo diabetes tipo 2</b><span>O prediabetes</span></div>
+      </button>
+      <button class="tab" data-t="fam" role="tab">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M2 21a6 6 0 0 1 12 0M13.5 21a4 4 0 0 1 7.5-1.8"/></svg></div>
+        <div><b>Soy mamá o papá</b><span>Mi hijo o hija tiene DT1</span></div>
+      </button>
+    </div>
+
+    <!-- DT1 -->
+    <div class="panel on" id="p-dt1">
+      <div class="main">
+        <span class="tag">Programa Nutrición &amp; Diabetes</span>
+        <h3>Para adultos con diabetes tipo 1</h3>
+        <p>Es mi programa principal. Trabajamos juntas tu alimentación y tu control glucémico con un plan hecho para tu vida real, no para una vida de manual. El objetivo es que ganes autonomía: que sepas qué hacer en cada situación sin depender de nadie.</p>
+        <h4>Lo que vas a conseguir</h4>
+        <ul class="lista">
+          <li>Contar hidratos y raciones con seguridad, sin pesarlo todo siempre</li>
+          <li>Entender los datos de tu sensor y mejorar tu tiempo en rango</li>
+          <li>Reducir subidas después de comer e hipoglucemias</li>
+          <li>Comer fuera, viajar, celebrar y tomar postre con estrategia</li>
+          <li>Trabajar hacia una hemoglobina glicosilada mejor, a tu ritmo</li>
+        </ul>
+      </div>
+      <div class="side">
+        <span class="badge">Programa completo</span>
+        <b class="big">Nutrición, glucosa y estrategia en un solo plan</b>
+        <p>Empezamos con una llamada de valoración gratuita para ver tu punto de partida y si el programa encaja contigo.</p>
+        <a class="btn blanco" data-cal href="#" target="_blank" rel="noopener"><svg><use href="#cal"/></svg>Agendar mi valoración</a>
+      </div>
+    </div>
+
+    <!-- DT2 -->
+    <div class="panel" id="p-dt2">
+      <div class="main">
+        <span class="tag">Sesiones 1:1</span>
+        <h3>Si tienes diabetes tipo 2</h3>
+        <p>La diabetes tipo 2 funciona distinto: aquí la alimentación tiene un papel enorme, porque bien planteada mejora la forma en que tu cuerpo responde a la insulina. Por eso no entras en el programa de tipo 1, sino que trabajamos en sesiones individuales adaptadas a ti.</p>
+        <h4>Qué trabajamos en las sesiones</h4>
+        <ul class="lista">
+          <li>Un plato equilibrado que controle la glucosa sin pasar hambre</li>
+          <li>Qué hidratos elegir, en qué cantidad y en qué momento del día</li>
+          <li>Cómo combinar alimentos para evitar los picos después de comer</li>
+          <li>Hábitos sostenibles: descanso, movimiento y organización de comidas</li>
+          <li>Leer etiquetas y hacer la compra sin agobios</li>
+        </ul>
+      </div>
+      <div class="side">
+        <span class="badge">Sesiones individuales</span>
+        <b class="big">Un plan a tu medida, paso a paso</b>
+        <p>Para empezar, escríbeme un email contándome tu caso: desde cuándo tienes diabetes tipo 2, qué tratamiento llevas y qué te gustaría mejorar. Lo leo personalmente y te respondo con los siguientes pasos.</p>
+        <a class="btn blanco" href="mailto:consolnutricion@gmail.com?subject=Diabetes%20tipo%202%3A%20quiero%20contarte%20mi%20caso&body=Hola%2C%20Consol%3A%0A%0ATe%20escribo%20porque%20tengo%20diabetes%20tipo%202.%0A%0A-%20Desde%20cu%C3%A1ndo%20la%20tengo%3A%0A-%20Tratamiento%20que%20llevo%3A%0A-%20Mi%20%C3%BAltima%20hemoglobina%20glicosilada%20%28si%20la%20s%C3%A9%29%3A%0A-%20Lo%20que%20m%C3%A1s%20me%20cuesta%20ahora%20mismo%3A%0A-%20Lo%20que%20me%20gustar%C3%ADa%20conseguir%3A%0A%0AGracias."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>Contar mi caso por email</a>
+        <div class="mailbox"><span>consolnutricion@gmail.com</span><button class="copiar" type="button">Copiar</button></div>
+      </div>
+    </div>
+
+    <!-- FAMILIAS -->
+    <div class="panel" id="p-fam">
+      <div class="main">
+        <span class="tag">Sesiones 1:1 para menores con DT1</span>
+        <h3>Si eres mamá o papá de un peque con diabetes tipo 1</h3>
+        <p>Sé lo que pesa estar pendiente de la glucosa de tu hijo a todas horas. En estas sesiones os acompaño a toda la familia para que la diabetes deje de organizar vuestro día y podáis tomar decisiones con calma y con información.</p>
+        <h4>Qué trabajamos juntos</h4>
+        <ul class="lista">
+          <li>Contar raciones de forma sencilla para los menús de cada día</li>
+          <li>Almuerzos, meriendas y comedor del cole sin miedo</li>
+          <li>Cumpleaños, excursiones y deporte con estrategia</li>
+          <li>Ajustes según el crecimiento y las distintas etapas</li>
+          <li>Que tu hijo o hija gane autonomía poco a poco, según su edad</li>
+        </ul>
+      </div>
+      <div class="side">
+        <span class="badge">Para toda la familia</span>
+        <b class="big">Más tranquilidad en casa, más libertad para tu peque</b>
+        <p>Para empezar, escríbeme un email contándome vuestro caso: la edad de tu peque, desde cuándo tiene diabetes y qué es lo que más os cuesta. Lo leo personalmente y os respondo con los siguientes pasos.</p>
+        <a class="btn blanco" href="mailto:consolnutricion@gmail.com?subject=Mi%20hijo/a%20tiene%20diabetes%20tipo%201%3A%20quiero%20contarte%20nuestro%20caso&body=Hola%2C%20Consol%3A%0A%0ATe%20escribo%20porque%20mi%20hijo/a%20tiene%20diabetes%20tipo%201.%0A%0A-%20Edad%3A%0A-%20Desde%20cu%C3%A1ndo%20tiene%20diabetes%3A%0A-%20Tratamiento%20%28bol%C3%ADgrafos%20o%20bomba%2C%20sensor%29%3A%0A-%20Lo%20que%20m%C3%A1s%20nos%20cuesta%20en%20el%20d%C3%ADa%20a%20d%C3%ADa%3A%0A-%20Lo%20que%20nos%20gustar%C3%ADa%20conseguir%3A%0A%0AGracias."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>Contar mi caso por email</a>
+        <div class="mailbox"><span>consolnutricion@gmail.com</span><button class="copiar" type="button">Copiar</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section id="programa">
+  <div class="wrap">
+    <span class="eyebrow">Qué es el programa</span>
+    <h2 class="titulo">No se trata de restricción, <span>sino de estrategia</span></h2>
+    <p class="lead">El Programa Nutrición &amp; Diabetes une lo que sé como farmacéutica y nutricionista con lo que he aprendido en 22 años viviendo con diabetes tipo 1. Estos son los pilares sobre los que trabajamos.</p>
+
+    <div class="pilares">
+      <div class="pil"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 4"/></svg></div>
+        <h3>Conteo de hidratos sin obsesión</h3><p>Aprendes a calcular raciones con precisión y también a estimar con buen ojo cuando no tienes báscula.</p></div>
+      <div class="pil"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 5-7 4 5"/><path d="M3 21h18"/></svg></div>
+        <h3>Lectura de tu glucosa</h3><p>Interpretamos los datos del sensor para encontrar patrones y entender qué está pasando, no solo qué número ves.</p></div>
+      <div class="pil"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16M5 11a7 7 0 0 0 14 0M12 4v3"/></svg></div>
+        <h3>Alimentación de verdad</h3><p>Un plan basado en comida real, flexible y adaptado a tus gustos, tus horarios y tu forma de vivir.</p></div>
+      <div class="pil"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h6M22 12h-4"/></svg></div>
+        <h3>Insulina y comida en equipo</h3><p>Aprendes a coordinar lo que comes con tus pautas de insulina, siempre en línea con tu equipo médico.</p></div>
+      <div class="pil"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
+        <h3>Situaciones reales</h3><p>Restaurantes, viajes, deporte, estrés, celebraciones. Preparamos estrategia para lo que de verdad te pasa.</p></div>
+      <div class="pil"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Autonomía y confianza</h3><p>El objetivo final es que sepas decidir por ti misma. Aprende a decidir con información.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="quien">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Para quién es</span>
+      <h2 class="titulo">¿Es para ti el <span>Programa Nutrición &amp; Diabetes?</span></h2>
+    </div>
+    <div class="cols">
+      <div class="col si">
+        <h3><i>✓</i>Es para ti si…</h3>
+        <ul class="lista">
+          <li>Eres mayor de 18 años y tienes diabetes tipo 1</li>
+          <li>Sientes que tu glucosa va por libre y no sabes por qué</li>
+          <li>Te cuesta contar hidratos o lo haces "a ojo" y no te cuadra</li>
+          <li>Comer fuera o tomar un postre te genera ansiedad</li>
+          <li>Quieres mejorar tu hemoglobina glicosilada y tu tiempo en rango</li>
+          <li>Estás dispuesta a implicarte y aprender</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3><i>✕</i>No es para ti si…</h3>
+        <ul class="lista">
+          <li>Buscas una dieta cerrada para seguir sin entenderla</li>
+          <li>Esperas resultados sin cambiar nada de tu día a día</li>
+          <li>Tienes diabetes tipo 2 (para ti son las sesiones 1:1: escríbeme a consolnutricion@gmail.com)</li>
+          <li>Es para un menor de edad (sesiones 1:1 en familia: escríbeme a consolnutricion@gmail.com)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Cómo empezamos</span>
+      <h2 class="titulo">Así de fácil es <span>dar el primer paso</span></h2>
+    </div>
+    <div class="pasos">
+      <div class="paso free"><span class="gratis">GRATIS</span><h3>Llamada de valoración</h3><p>Reservas en mi calendario y hablamos de tu situación, tus dudas y tus objetivos.</p></div>
+      <div class="paso"><h3>Tu punto de partida</h3><p>Analizamos tu glucosa, tu alimentación y tu rutina para saber desde dónde empezamos.</p></div>
+      <div class="paso"><h3>Tu plan personalizado</h3><p>Diseñamos una estrategia adaptada a tu vida, sin reglas imposibles de cumplir.</p></div>
+      <div class="paso"><h3>Acompañamiento</h3><p>Ajustamos, revisamos y corregimos juntas hasta que te sientas segura decidiendo sola.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="quien">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="titulo">Lo que más <span>me preguntáis</span></h2>
+    </div>
+    <div class="faq">
+      <details open><summary>¿La llamada de valoración tiene coste?</summary><p>No. Es gratuita y sin compromiso. Sirve para conocernos, entender tu caso y ver si puedo ayudarte y de qué manera.</p></details>
+      <details><summary>¿Sustituye a mi endocrino o a mi educadora en diabetes?</summary><p>No. Mi trabajo complementa el de tu equipo médico. Yo te ayudo con la parte nutricional y con la estrategia del día a día, siempre respetando las pautas que ellos te marcan.</p></details>
+      <details><summary>¿Voy a tener que dejar de comer lo que me gusta?</summary><p>No. Un postre no es el problema, la falta de estrategia sí. Aprendes a encajar lo que te gusta con cabeza, sin castigarte.</p></details>
+      <details><summary>Tengo diabetes tipo 2, ¿puedo trabajar contigo?</summary><p>Sí. Para diabetes tipo 2 trabajo en sesiones 1:1 adaptadas a tu caso. Escríbeme a <a href="mailto:consolnutricion@gmail.com?subject=Diabetes%20tipo%202%3A%20quiero%20contarte%20mi%20caso&body=Hola%2C%20Consol%3A%0A%0ATe%20escribo%20porque%20tengo%20diabetes%20tipo%202.%0A%0A-%20Desde%20cu%C3%A1ndo%20la%20tengo%3A%0A-%20Tratamiento%20que%20llevo%3A%0A-%20Mi%20%C3%BAltima%20hemoglobina%20glicosilada%20%28si%20la%20s%C3%A9%29%3A%0A-%20Lo%20que%20m%C3%A1s%20me%20cuesta%20ahora%20mismo%3A%0A-%20Lo%20que%20me%20gustar%C3%ADa%20conseguir%3A%0A%0AGracias.">consolnutricion@gmail.com</a> contándome tu situación y te respondo personalmente con los siguientes pasos.</p></details>
+      <details><summary>Mi hijo o hija tiene diabetes tipo 1, ¿cómo funciona?</summary><p>Con menores trabajo en sesiones 1:1 con la familia, porque sois vosotros quienes gestionáis el día a día. Escríbeme a <a href="mailto:consolnutricion@gmail.com?subject=Mi%20hijo/a%20tiene%20diabetes%20tipo%201%3A%20quiero%20contarte%20nuestro%20caso&body=Hola%2C%20Consol%3A%0A%0ATe%20escribo%20porque%20mi%20hijo/a%20tiene%20diabetes%20tipo%201.%0A%0A-%20Edad%3A%0A-%20Desde%20cu%C3%A1ndo%20tiene%20diabetes%3A%0A-%20Tratamiento%20%28bol%C3%ADgrafos%20o%20bomba%2C%20sensor%29%3A%0A-%20Lo%20que%20m%C3%A1s%20nos%20cuesta%20en%20el%20d%C3%ADa%20a%20d%C3%ADa%3A%0A-%20Lo%20que%20nos%20gustar%C3%ADa%20conseguir%3A%0A%0AGracias.">consolnutricion@gmail.com</a> contándome vuestro caso y os respondo con los siguientes pasos.</p></details>
+      <details><summary>¿Y si me diagnosticaron hace poco?</summary><p>Es un momento ideal para empezar con buena base. Al principio todo abruma, y tener a alguien que lo vive en primera persona marca la diferencia.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="final">
+  <div class="wrap">
+    <div class="fbox">
+      <svg class="deco"><use href="#apple"/></svg>
+      <h2>Tu diabetes puede ir <span>mucho mejor</span> de lo que imaginas</h2>
+      <p>Reserva tu llamada de valoración gratuita. Elige el día y la hora que mejor te vengan y hablamos de tu caso.</p>
+      <a class="btn" data-cal href="#" target="_blank" rel="noopener"><svg><use href="#cal"/></svg>Reservar mi llamada gratuita</a>
+      <small>Plazas limitadas cada mes</small>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <b>Consol Simón · @nutridiabeticame</b><br>Farmacéutica y nutricionista especializada en diabetes
+  <p class="legal">La información de esta página es divulgativa y no sustituye la valoración de tu equipo médico.</p>
+</footer>
+
+<div class="fab" id="fab"><a class="btn" data-cal href="#" target="_blank" rel="noopener"><svg><use href="#cal"/></svg>Agenda tu valoración gratuita</a></div>
+
+<script>
+const CALENDLY_URL = "https://calendly.com/nutridiabeticame/conoce-mi-servicio-deformagratuita";
+document.querySelectorAll("[data-cal]").forEach(a => a.href = CALENDLY_URL);
+
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === t));
+  document.querySelectorAll(".panel").forEach(p => p.classList.toggle("on", p.id === "p-" + t.dataset.t));
+  const fb = document.querySelector("#fab .btn"), mail = document.querySelector("#p-" + t.dataset.t + " .side a[href^='mailto']");
+  if (mail) { fb.href = mail.href; fb.removeAttribute("target"); fb.lastChild.textContent = "Contar mi caso por email"; }
+  else { fb.href = CALENDLY_URL; fb.target = "_blank"; fb.lastChild.textContent = "Agenda tu valoración gratuita"; }
+  if (window.innerWidth < 760) document.getElementById("p-" + t.dataset.t).scrollIntoView({behavior:"smooth", block:"start"});
+}));
+
+document.querySelectorAll(".copiar").forEach(b => b.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText("consolnutricion@gmail.com"); b.textContent = "¡Copiado!"; } catch (e) { b.textContent = "Selecciónalo"; }
+  setTimeout(() => b.textContent = "Copiar", 1800);
+}));
+
+const fab = document.getElementById("fab"), fin = document.querySelector(".fbox");
+new IntersectionObserver(e => fab.classList.toggle("oculto", e[0].isIntersecting), {threshold:.3}).observe(fin);
+</script>
+</body>
+</html>
